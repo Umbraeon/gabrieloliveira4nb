@@ -59,7 +59,7 @@ Liste e descreva os requisitos não funcionais que o sistema deve atender.
 |------|---------------------------------------------------------------------------|------------|---------------|
 | RNF01| O sistema deve responder a 90% das requisições em até 3 segundos.         | Alta       | Gabriel O.    |
 | RNF02| O sistema deve ser simples de usar, com uma interface de API RESTful.     | Alta       | Gabriel O.    |
-| RNF02| O sistema deve ser fácil de manter e entender, com código bem documentado.| Alta       | Gabriel O.    |
+| RNF03| O sistema deve ser fácil de manter e entender, com código bem documentado.| Alta       | Gabriel O.    |
 
 ## Casos de Uso
 
