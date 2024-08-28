@@ -1,4 +1,4 @@
-# Nome do Projeto
+# BarberSHOP
 
 ## Índice
 
@@ -15,89 +15,126 @@
 
 ## Visão Geral
 
-Descreva brevemente o propósito do software, os principais objetivos e o público-alvo.
+BarberSHOP é um sistema simples de agendamento online para uma barbearia. O objetivo é permitir que os clientes agendem serviços diretamente pelo site, escolhendo o barbeiro e o horário desejado. 
 
 ## Escopo
 
-Defina o escopo do projeto, incluindo as funcionalidades principais que serão desenvolvidas e quaisquer limitações ou exclusões.
+O projeto incluirá:
+
+Um sistema básico de agendamento de serviços.
+Cadastro e autenticação de usuários.
+Escolha de barbeiros e horários.
+Verificação de disponibilidade de horários.
+Um painel simples para os barbeiros visualizarem seus agendamentos.
+
 
 ## Arquitetura do Sistema
 
-Apresente uma visão geral da arquitetura do sistema, incluindo diagramas se necessário. 
+A arquitetura do sistema será monolítica, focando em um servidor backend que gerenciará todas as funcionalidades da aplicação. Será utilizado TypeScript com Node.js para desenvolver o servidor, e um banco de dados relacional para armazenar os dados 
 
 ### Componentes Principais
 
-- **Componente 1**: Descrição breve.
-- **Componente 2**: Descrição breve.
+Servidor Backend: Desenvolvido em TypeScript com Node.js e Express, ele será responsável por todas as operações do sistema, como gerenciamento de usuários, agendamentos e integração com o banco de dados.
+
+Banco de Dados: MySQL será utilizado para armazenar informações sobre usuários, barbeiros, serviços e agendamentos.
 
 ## Requisitos Funcionais
 
 Liste e descreva os requisitos funcionais que o sistema deve atender.
 
-| ID   | Descrição                                          | Prioridade | Responsável |
-|------|----------------------------------------------------|------------|-------------|
-| RF01 | O sistema deve permitir o login de usuários.       | Alta       | Equipe A    |
-| RF02 | O sistema deve enviar notificações por email.      | Média      | Equipe B    |
+| ID   | Descrição                                                           | Prioridade | Responsável |
+|------|---------------------------------------------------------------------|------------|-------------|
+| RF01 | O sistema deve permitir que os usuários se cadastrem e façam login. | Alta       | Gabriel O.  |
+| RF02 | O sistema deve permitir que os usuários agendem serviços.           | Alta       | Gabriel O.  |
+| RF03 | O sistema deve permitir que os usuários escolham um barbeiro.       | Alta       | Gabriel O.  |
+| RF04 | O sistema deve mostrar os horários disponíveis para agendamento.    | Alta       | Gabriel O.  |
+| RF05 | O sistema deve permitir o cancelamento de agendamentos.             | Média      | Gabriel O.  |
+
 
 ## Requisitos Não Funcionais
 
 Liste e descreva os requisitos não funcionais que o sistema deve atender.
 
-| ID   | Descrição                                            | Prioridade | Responsável |
-|------|------------------------------------------------------|------------|-------------|
-| RNF01| O sistema deve responder a 95% das requisições em até 2 segundos. | Alta | Equipe C    |
-| RNF02| O sistema deve estar disponível 99,9% do tempo.      | Alta       | Equipe D    |
+| ID   | Descrição                                                                 | Prioridade |  Responsável  |
+|------|---------------------------------------------------------------------------|------------|---------------|
+| RNF01| O sistema deve responder a 90% das requisições em até 3 segundos.         | Alta       | Gabriel O.    |
+| RNF02| O sistema deve ser simples de usar, com uma interface de API RESTful.     | Alta       | Gabriel O.    |
+| RNF02| O sistema deve ser fácil de manter e entender, com código bem documentado.| Alta       | Gabriel O.    |
 
 ## Casos de Uso
 
-Descreva os principais casos de uso do sistema.
+## Caso de Uso 1: *Cadastro de Usuário*
 
-### Caso de Uso 1: **Nome do Caso de Uso**
+**Descrição**: Permitir que novos usuários se cadastrem no sistema.
 
-**Descrição**: Descrição do caso de uso.
-
-**Ator Principal**: Quem está interagindo com o sistema?
+**Ator Principal**: Cliente
 
 **Fluxo Principal**:
-1. Passo 1
-2. Passo 2
-3. Passo 3
 
-**Fluxos Alternativos**:
-- Alternativa 1: Descrição.
-- Alternativa 2: Descrição.
+1. O usuário acessa a rota de cadastro.
+2. O usuário fornece nome, e-mail e senha.
+3. O sistema salva os dados no banco de dados.
+4. O sistema confirma o cadastro ao usuário.
+
+## Caso de Uso 2: *Agendar Serviço*
+
+**Descrição**: O usuário agenda um serviço de barbearia escolhendo um barbeiro e um horário.
+
+**Ator Principal**: Cliente
+
+**Fluxo Principal**:
+
+1. O usuário faz login no sistema.
+2. O usuário seleciona um serviço e um barbeiro.
+3. O sistema mostra os horários disponíveis.
+4. O usuário seleciona um horário e confirma o agendamento.
+5. O sistema salva o agendamento no banco de dados.
+
+## Caso de Uso 3: *Cancelar Agendamento*
+
+**Descrição**: O usuário cancela um agendamento previamente marcado.
+
+**Ator Principal**: Cliente
+
+**Fluxo Principal**:
+
+1. O usuário faz login no sistema.
+2. O usuário acessa seus agendamentos.
+3. O usuário escolhe o agendamento que deseja cancelar.
+4. O sistema remove o agendamento do banco de dados.
+
+
 
 ## Ambiente de Desenvolvimento
 
-Detalhe o ambiente de desenvolvimento, incluindo tecnologias, ferramentas e configurações.
+**Tecnologias Utilizadas**
 
-### Tecnologias Utilizadas
+- **Linguagem de Programação**: TypeScript para o backend.
+- **Banco de Dados**: MySQL para armazenamento de dados.
 
-- **Linguagem de Programação**: Exemplo: Python, Java
-- **Banco de Dados**: Exemplo: MySQL, PostgreSQL
-- **Frameworks**: Exemplo: Django, Spring Boot
 
 ## Plano de Testes
 
-Explique a abordagem de testes que será utilizada, incluindo tipos de testes, ferramentas, e cronograma.
+O objetivo deste plano de testes é garantir que as funcionalidades principais do sistema BarberSHOP estejam funcionando corretamente, com foco nas operações de cadastro de usuários, agendamento de serviços e integração com o banco de dados.
 
 ### Tipos de Testes
 
-- **Teste Unitário**: Descrição.
-- **Teste de Integração**: Descrição.
-- **Teste de Aceitação**: Descrição.
+- **Teste Unitário**: Testar funções individuais no backend, como o cadastro de usuários e o agendamento de serviços.
+- **Teste de Integração**: Verificar se as rotas e o banco de dados estão se comunicando corretamente.
 
 ## Cronograma
 
 Apresente um cronograma para o desenvolvimento do software.
 
-| Fase          | Data de Início | Data de Término | Responsável |
-|---------------|----------------|-----------------|-------------|
-| Planejamento  | 01/09/2024     | 15/09/2024      | Equipe A    |
-| Desenvolvimento | 16/09/2024  | 30/11/2024      | Equipe B    |
-| Testes        | 01/12/2024     | 15/12/2024      | Equipe C    |
+| Fase            | Data de Início | Data de Término | Responsável |
+|-----------------|----------------|-----------------|-------------|
+| Planejamento    | 28/08/2024     | 28/08/2024      | Gabriel O.  |
+| Desenvolvimento | 01/09/2024     | ??/11/2024      | Gabriel O.  |
+| Testes          | 01/12/2024     | ??/12/2024      | Gabriel O.  |
 
 ## Referências
 
-Liste quaisquer referências ou documentos que foram utilizados para a criação deste documento.
+- GPT
+- Documentação do Node.js
+- Documentação do MySQL
 
