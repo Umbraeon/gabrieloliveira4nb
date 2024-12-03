@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependências
+/node_modules
+/.pnp
+.pnp.js
+
+# Diretórios de build
+build/
+dist/
+tmp/
+
+# Sistemas de cache
+.cache/
+.vscode/
+
+# Dados temporários
+*.tmp
+*.swp
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
